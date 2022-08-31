@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import shap
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 
@@ -142,18 +141,18 @@ st.subheader('Prediction probability')
 st.write(prediction_proba)
 
 st.write('---')
-import subprocess, sys
+#import subprocess, sys
 # subprocess.Popen("E:\\DL\\TF\\student\\model_building\\student_model.py", shell=True)
-from student_model import X_data
+#from student_model import X_data
 
-explainer = shap.TreeExplainer(load_clf)
-shap_values = explainer.shap_values(X_data)
+#explainer = shap.TreeExplainer(load_clf)
+#shap_values = explainer.shap_values(X_data)
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
-st.header('Feature Importance')
-plt.title('Feature importance based on SHAP values')
-shap.summary_plot(shap_values, X_data)
-st.pyplot(bbox_inches='tight')
+#st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.header('Feature Importance')
+#plt.title('Feature importance based on SHAP values')
+#shap.summary_plot(shap_values, X_data)
+#st.pyplot(bbox_inches='tight')
 
 
 
