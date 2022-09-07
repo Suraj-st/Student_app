@@ -126,18 +126,23 @@ prediction_proba = load_clf.predict_proba(student)
 
 targets = ['Dropout', 'Enrolled', 'Graduate']
 st.subheader('Targets')
-targets_df = pd.DataFrame(targets)
+columns = ['Target']
+targets_df = pd.DataFrame(targets, columns = columns)
 st.write(targets_df)
 st.write('---')
 
 
 st.subheader('Prediction')
 student_result = np.array(['Dropout', 'Enrolled', 'Graduate'])
-st.write(student_result[prediction])
+col = ['Result']
+results = pd.DataFrame(student_result[prediction], columns = col)
+st.write(results)
 st.write('---')
 
 st.subheader('Prediction probability')
-st.write(prediction_proba)
+cols = ['Dropout', 'Enrolled', 'Graduate']
+result = pd.DataFrame(prediction_proba, columns = cols)
+st.write(result)
 
 st.write('---')
 #import subprocess, sys
